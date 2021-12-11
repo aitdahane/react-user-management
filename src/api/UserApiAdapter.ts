@@ -6,7 +6,7 @@ export class UserApiAdapter extends ApiAdapter {
         return super.fetch<User[]>('/users', 'GET')
     }
 
-    public static get(id: number): Promise<User> {
+    public static get(id: string): Promise<User> {
         return super.fetch<User>(`/users/${id}`, 'GET');
     }
 
@@ -14,11 +14,11 @@ export class UserApiAdapter extends ApiAdapter {
         return super.fetch<User>('/users', 'POST', user);
     }
 
-    public static update(id: number, user: Partial<User>): Promise<User> {
+    public static update(id: string, user: Partial<User>): Promise<User> {
         return super.fetch<User>(`/users/${id}`, 'PUT', user);
     }
 
-    public static delete(id: number): Promise<User> {
+    public static delete(id: string): Promise<User> {
         return super.fetch<User>(`/users/${id}`, 'DELETE');
     }
 }

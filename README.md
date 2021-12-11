@@ -26,6 +26,7 @@ The associated backend api is provided from this [link](https://github.com/Besed
     ├── components
         ├── Header
         ├── UserCard
+        ├── UserEdit
         ├── UserList
     ├── helpers
         ├── UserHelper.test.ts

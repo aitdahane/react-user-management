@@ -1,4 +1,3 @@
-import { render, screen } from '@testing-library/react';
 import { UserHelper } from './UserHelper';
 import { User } from '../types';
 
@@ -11,6 +10,14 @@ describe('UserHelper tests', () => {
 
   test('getFullName', () => {
     expect(UserHelper.getFullName(user)).toEqual('Moh Dah');
+  });
+
+  test('getFirstName', () => {
+    expect(UserHelper.getFirstName(user)).toEqual('Moh');
+  });
+
+  test('getLastName', () => {
+    expect(UserHelper.getLastName(user)).toEqual('Dah');
   });
 
   test('getPicure', () => {
