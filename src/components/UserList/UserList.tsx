@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import './UserList.css';
+import { UserCard } from '../UserCard/UserCard';
 
 export class UserList extends Component {
     public render() {
@@ -9,7 +10,7 @@ export class UserList extends Component {
                 <div className="UserList-header">
                     <h2 className="UserList-header-title">User List</h2>
 
-                    <Button variant="secondary">Add User</Button>
+                    <Button variant="dark">Add User</Button>
                 </div>
 
                 <div className="UserList-content">{this.renderUserListElements()}</div>
@@ -18,6 +19,6 @@ export class UserList extends Component {
     }
 
     public renderUserListElements() {
-        return undefined;
+        return [1, 2, 3, 4, 5].map(() => (<UserCard></UserCard>));
     }
 }
