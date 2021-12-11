@@ -1,0 +1,21 @@
+.UserList {
+    padding: 0 36px;
+}
+
+.UserList-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    margin: 18px 0;
+}
+
+.UserList-header-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.UserList-content {
+    display: flex;
+    flex-wrap: wrap;
+}
