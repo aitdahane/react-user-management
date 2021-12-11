@@ -2,16 +2,10 @@ import { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import { UserHelper } from '../../helpers';
 import './UserCard.css';
+import { User } from '../../types';
 
-export class UserCard extends Component {
-    public user = {
-        id: '1',
-        name: {
-            first: 'Mohamed',
-            last: 'Dahane',
-        },
-        picture: 'https://randomuser.me/api/portraits/men/4.jpg',
-    }; // Mock only will be deleted
+export class UserCard extends Component<{ user: User }, any> {
+    public user = this.props.user;
 
     public render() {
         return (
