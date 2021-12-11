@@ -2,7 +2,23 @@ import { User } from '../types';
 import { ApiAdapter } from './ApiAdapter';
 
 export class UserApiAdapter extends ApiAdapter {
-    public static getUsers(): Promise<User[]> {
-        return super.fetch<User[]>('/users')
+    public static getAll(): Promise<User[]> {
+        return super.fetch<User[]>('/users', 'GET')
+    }
+
+    public static get(id: number): Promise<User> {
+        return super.fetch<User>(`/users/${id}`, 'GET');
+    }
+
+    public static create(user: Partial<User>): Promise<User> {
+        return super.fetch<User>('/users', 'POST', user);
+    }
+
+    public static update(id: number, user: Partial<User>): Promise<User> {
+        return super.fetch<User>(`/users/${id}`, 'PUT', user);
+    }
+
+    public static delete(id: number): Promise<User> {
+        return super.fetch<User>(`/users/${id}`, 'DELETE');
     }
 }

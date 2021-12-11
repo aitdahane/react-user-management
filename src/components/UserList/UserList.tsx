@@ -2,12 +2,12 @@ import { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import './UserList.css';
 import { UserCard } from '../UserCard/UserCard';
-import { UserApiAdapter } from '../../api/UserApiAdapter';
+import { UserApiAdapter } from '../../api';
 import { User } from '../../types';
 
 export class UserList extends Component<any, { users: User[] }> {
     public componentDidMount() {
-        UserApiAdapter.getUsers()
+        UserApiAdapter.getAll()
             .then((users) => this.setState({ users }));
     }
 
