@@ -3,6 +3,10 @@ User Management App is a simple react application that allows to list, add, upda
 
 The associated backend api is provided from this [link](https://github.com/Besedo/frontend-test-data)
 
+## Overview
+
+![User list](./public/app-page-sample.png)
+
 ## Getting started
 1. Download or clone the application repository from this [link](https://github.com/aitdahane/user-management-app)
 2. In case you download the project, unzip the file
@@ -52,4 +56,6 @@ If you want to run a specific test file, you can use :
 yarn test src/App.test.tsx 
 ```
 
-##
+## License
+
+[MIT License](./LICENSE)
