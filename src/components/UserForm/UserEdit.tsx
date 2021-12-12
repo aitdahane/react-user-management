@@ -12,8 +12,13 @@ interface UserEditState {
     picture?: string;
 }
 
-export class UserEdit extends Component<{ user: User }, UserEditState> {
-    constructor(props: { user: User }) {
+interface UserEditProps {
+    user: User;
+    userChange: Function;
+}
+
+export class UserEdit extends Component<UserEditProps, UserEditState> {
+    constructor(props: UserEditProps) {
         super(props);
         this.state = {
             show: false,
@@ -43,7 +48,7 @@ export class UserEdit extends Component<{ user: User }, UserEditState> {
                             <Form.Group className="mb-3" controlId="fistName">
                                 <Form.Label>First name</Form.Label>
                                 <Form.Control placeholder="Enter a first name"
-                                              name="fistName"
+                                              name="firstName"
                                               defaultValue={this.state.firstName}
                                               onChange={this.handleChange.bind(this)} />
                             </Form.Group>
@@ -94,6 +99,9 @@ export class UserEdit extends Component<{ user: User }, UserEditState> {
             picture: this.state.picture,
         };
         UserApiAdapter.update(this.props.user.id, payload)
-            .then(() => this.handleClose());
+            .then((user) => {
+                this.props.userChange(user);
+                this.handleClose()
+            });
     }
 }
